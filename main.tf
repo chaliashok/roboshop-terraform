@@ -1,4 +1,12 @@
-module "test" {
+module "frontend" {
+  for_each = var.components
   source = "git::https://github.com/chaliashok/tf-module-app.git"
-  env    = var.env
+  component = each.key
+  env = var.env
 }
+
+#module "test" {
+#
+#  env    = var.env
+#}
+
