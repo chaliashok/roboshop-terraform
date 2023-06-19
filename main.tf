@@ -1,4 +1,5 @@
-module "frontend" {
+module "frontend"
+{
   for_each = var.components
   source = "git::https://github.com/chaliashok/tf-module-app.git"
   component = each.key
